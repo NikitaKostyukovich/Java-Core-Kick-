@@ -13,7 +13,7 @@ import java.util.List;
 public class DataReaderImpl implements DataReaderService{
     private final static Logger logger = LogManager.getLogger(DataReaderImpl.class);
     @Override
-    public List<String> readData(String pathtofile){
+    public List<String> readData(String pathtofile) throws ArrayException{
         try{
             Path path = Path.of(pathtofile);
             return Files.readAllLines(path);

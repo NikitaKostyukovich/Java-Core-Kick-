@@ -5,7 +5,7 @@ import service.arraysorts.ArraySort;
 
 public class QuickSortImpl implements ArraySort {
     @Override
-    public void sort(int[] array) {
+    public void sort(int[] array)  throws ArrayException{
         if (array == null)
         {
             throw new ArrayException("Array cannot be null for sorting");

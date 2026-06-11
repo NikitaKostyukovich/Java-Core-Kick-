@@ -2,9 +2,9 @@ package parser;
 import exception.ArrayException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-public class DataParserImp implements DataParser{
-    private static final String SPLIT_REGEX = "[ ,;-]+";
-    private static  final Logger logger = LogManager.getLogger(DataParserImp.class);
+public class DataParserImpl implements DataParser{
+    private static final String SPLIT_REGEX = "[ ,;]+";
+    private static  final Logger logger = LogManager.getLogger(DataParserImpl.class);
     @Override
     public int[] dataParse(String line) throws ArrayException{
         logger.debug("Attempting to parse line: {}", line);

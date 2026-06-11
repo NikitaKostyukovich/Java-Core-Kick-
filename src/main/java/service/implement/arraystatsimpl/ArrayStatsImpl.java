@@ -17,7 +17,7 @@ public class ArrayStatsImpl implements ArrayStats {
 
         if (array == null) {
             logger.error("Error in findMax: provided array is null");
-            throw new ArrayException("Array cannot be null for calculating statistics.");
+
         }
 
         if (array.length == 0) {
@@ -25,7 +25,7 @@ public class ArrayStatsImpl implements ArrayStats {
             return Optional.empty();
         }
 
-        try {
+
             int maxValue = array[0];
             for (int i = 1; i < array.length; i++) {
                 if (array[i] > maxValue) {
@@ -35,10 +35,7 @@ public class ArrayStatsImpl implements ArrayStats {
             logger.info("Method findMax successfully finished. Max value: {}", maxValue);
             return Optional.of(maxValue);
 
-        } catch (Throwable t) {
-            logger.error("Unexpected error occurred while finding max value", t);
-            throw new ArrayException("Critical failure during max value calculation", t);
-        }
+
     }
 
     @Override
@@ -47,7 +44,7 @@ public class ArrayStatsImpl implements ArrayStats {
 
         if (array == null) {
             logger.error("Error in findMin: provided array is null");
-            throw new ArrayException("Array cannot be null for calculating statistics.");
+
         }
 
         if (array.length == 0) {
@@ -55,7 +52,7 @@ public class ArrayStatsImpl implements ArrayStats {
             return Optional.empty();
         }
 
-        try {
+
             int minValue = array[0];
             for (int i = 1; i < array.length; i++) {
                 if (array[i] < minValue) {
@@ -65,10 +62,7 @@ public class ArrayStatsImpl implements ArrayStats {
             logger.info("Method findMin successfully finished. Min value: {}", minValue);
             return Optional.of(minValue);
 
-        } catch (Throwable t) {
-            logger.error("Unexpected error occurred while finding min value", t);
-            throw new ArrayException("Critical failure during min value calculation", t);
-        }
+
     }
 
     @Override
@@ -77,7 +71,7 @@ public class ArrayStatsImpl implements ArrayStats {
 
         if (array == null) {
             logger.error("Error in findAverage: provided array is null");
-            throw new ArrayException("Array cannot be null for calculating statistics.");
+
         }
 
         if (array.length == 0) {
@@ -85,7 +79,7 @@ public class ArrayStatsImpl implements ArrayStats {
             return Optional.empty();
         }
 
-        try {
+
             int sum = 0;
             for (int i = 0; i < array.length; i++) {
                 sum += array[i];
@@ -95,19 +89,16 @@ public class ArrayStatsImpl implements ArrayStats {
             logger.info("Method findAverage successfully finished. Average value: {}", avgResult);
             return Optional.of(avgResult);
 
-        } catch (Throwable t) {
-            logger.error("Unexpected error occurred while finding average value", t);
-            throw new ArrayException("Critical failure during average value calculation", t);
-        }
+
     }
 
     @Override
-    public Optional<Integer> findSum(int[] array) {
+    public Optional<Integer> findSum(int[] array){
         logger.info("Method findSum execution started");
 
         if (array == null) {
             logger.error("Error in findSum: provided array is null");
-            throw new ArrayException("Array cannot be null for calculating statistics.");
+
         }
 
         if (array.length == 0) {
@@ -115,7 +106,7 @@ public class ArrayStatsImpl implements ArrayStats {
             return Optional.empty();
         }
 
-        try {
+
             int arraySum = 0;
             for (int i = 0; i < array.length; i++) {
                 arraySum += array[i];
@@ -123,9 +114,6 @@ public class ArrayStatsImpl implements ArrayStats {
             logger.info("Method findSum successfully finished. Total sum: {}", arraySum);
             return Optional.of(arraySum);
 
-        } catch (Throwable t) {
-            logger.error("Unexpected error occurred while calculating sum", t);
-            throw new ArrayException("Critical failure during sum calculation", t);
-        }
+
     }
 }
