@@ -6,7 +6,7 @@ public class DataParserImp implements DataParser{
     private static final String SPLIT_REGEX = "[ ,;-]+";
     private static  final Logger logger = LogManager.getLogger(DataParserImp.class);
     @Override
-    public int[] dataParse(String line){
+    public int[] dataParse(String line) throws ArrayException{
         logger.debug("Attempting to parse line: {}", line);
         if (line == null || line.isBlank()) {
             logger.error("Received null or blank line for parsing");
